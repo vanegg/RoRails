@@ -1,0 +1,22 @@
+<div class="page-header">
+  <h1>
+    New question!</q> <small> Write your question...</small>
+  </h1>
+</div>
+<div class="col-sm-3">
+<%= render 'layouts/vertical_navbar', layout: false%>
+</div>
+
+<div class="col-sm-9">
+  
+
+  <div class="form-group">
+    <%= form_for [current_user, @question] do |q| %>
+      <%= q.label 'Question:' %>:
+      <%= q.text_area :text, placeholder:'Question..', class: 'form-control'%>
+      <br>
+      <%= q.submit class: 'btn btn-cstom'%>
+  <%end%>
+</div>
+
+</div>

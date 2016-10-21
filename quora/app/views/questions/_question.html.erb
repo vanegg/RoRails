@@ -1,0 +1,14 @@
+<div class="col-md-9">
+  <blockquote>
+    <p><%=question.text%></p> <small><%=User.find(question.user_id).name%> <cite><%=question.created_at%></cite></small>
+  </blockquote> 
+
+  <%@answers = question.answers%>
+  <div class="row">
+    <!-- <div class="col-md-1"></div> -->
+    <div class="col-md-10 col-md-offset-1">
+      <%= render(@answers)%>
+    </div>
+  </div>
+  
+</div>

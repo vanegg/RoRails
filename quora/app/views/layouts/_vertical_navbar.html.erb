@@ -1,0 +1,27 @@
+ <div class="sidebar-nav">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="visible-xs navbar-brand">Sidebar menu</span>
+        </div>
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><%= link_to "Home", pages_home_path%></li>
+            <li><%= link_to "Profile", user_path(current_user)%></li>    
+            <li><%= link_to "Create Question", new_user_question_path(current_user.id)%></li>
+            <li><%= link_to "See All Questions", questions_all_path%></li>
+            <li><%= link_to "See My Questions", user_questions_path(current_user)%></li>
+            <li><%= link_to "See All Users", users_path%></li>
+            <li><%= link_to "Update Information", edit_user_path(current_user)%></li>
+            <li><%= link_to "About us", pages_about_path%></li>
+            <li><%= link_to "Logout", pages_logout_path%></li>
+            <li><a href="#">Reviews <span class="badge">1,118</span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>

@@ -1,6 +1,19 @@
-<h1>Editing User</h1>
+<div class="page-header">
+  <h1>
+   Edit User!</q> <small>editing...</small>
+  </h1>
+</div>
 
-<%= render 'form', user: @user %>
+<p id="notice"><%= notice %></p>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+  <div class="row">
+
+    <div class="col-sm-3">
+      <%= render 'layouts/vertical_navbar', layout: false%>
+    </div>
+  <div class="col-sm-9">
+    <%= render 'form', user: @user %>
+    <%= link_to 'Show', @user %> |
+    <%= link_to 'Back', users_path %>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>
+    About us!</q> <small> Something like Daft Punk's song...</small>
+  </h1>
+</div>
+<div class="row">
+
+<div class="col-sm-3">
+    <div class="sidebar-nav">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="visible-xs navbar-brand">Sidebar menu</span>
+        </div>
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"> <li class="active"><%= link_to "Home", pages_home_path%></li>
+            <%if logged_in?%><li><%= link_to "Profile", user_path(id: current_user.id)%></li><%end%>           
+            <li><a href="/pages/about">About us</a></li>
+            <li><a href="#">Reviews <span class="badge">1,118</span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-9">
+  <div><%= image_tag("/coffee2.jpg", width: '150', class: "img-rounded img-responsive center-block")%></div>
+  <br>
+  <p>Cupcake ipsum dolor sit amet pastry. I love pastry sweet roll. Gingerbread chocolate cake jelly beans tiramisu powder cupcake
+  </p>
+  <p>Cookie cake apple pie chupa chups pudding gingerbread bonbon jelly beans. Jelly beans bear claw cookie powder dragée macaroon jelly. Tootsie roll chocolate cake icing bonbon candy canes.p
+  Sweet roll dragée jelly. Chocolate tart croissant muffin candy I love topping chocolate cake chocolate bar. Danish bear claw dragée cake powder. Jelly beans cupcake sweet roll macaroon wafer chocolate pudding.</p>
+  <p>Chocolate cake jelly-o jujubes dragée I love halvah carrot cake. Muffin cotton candy jelly jelly-o pie I love lollipop fruitcake. Jelly-o cookie oat cake I love chocolate bar lollipop fruitcake tiramisu. Tart powder chocolate lollipop cupcake sesame snaps gummies. Cookie I love I love pastry. Gingerbread caramels cookie apple pie lemon drops cake cake macaroon dragée. Gummies sweet roll jelly beans I love gummi bears I love sweet roll I love. Brownie jujubes marshmallow pastry. Powder marzipan halvah carrot cake macaroon jelly-o chupa chups candy.</p>
+
+  </div>
+</div>
+
