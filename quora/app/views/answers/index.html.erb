@@ -1,0 +1,11 @@
+<div class="page-header">
+  <h1>
+    All your answers!</q> <small>Questions that you have answered...</small>
+  </h1>
+</div>
+<p id="notice"><%= notice %></p>
+<div class="row">
+<div class="col-sm-3">
+<%= render 'layouts/vertical_navbar', layout: false%>
+</div>
+<%= render(@questions, locals: {obj: @my_answer = true})%>

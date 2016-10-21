@@ -1,0 +1,6 @@
+<%@controller = @element.class.to_s.downcase + 's'%> 
+
+<a href="#">Votes:</a> <span class="badge"><%=@element.votes.length%></span>
+<%if @element.user_id == current_user.id%>
+| <%=link_to "Edit", {controller: @controller, :action => :edit, user_id: current_user.id, id: @element.id}%>
+<%end%>

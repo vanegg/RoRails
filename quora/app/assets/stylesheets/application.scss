@@ -17,12 +17,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.container-fluid, html {
-  background-color: #484647;
-}
-
 $ligth-color: white;
 $ligth-selected-color: #DDD8DA;
+$dark-color: #484647;
+
+.container-fluid, html {
+  background-color: $dark-color;
+}
 
 p, h1, h2, h3, h4, h5, h6, label, a, th, tr {
   color: $ligth-color;
@@ -30,6 +31,7 @@ p, h1, h2, h3, h4, h5, h6, label, a, th, tr {
 
 .btn-cstom {
     background-color: $ligth-color;
+    color: $dark-color;
 }
 
 .btn-cstom:hover {

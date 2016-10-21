@@ -1,3 +1,4 @@
 <blockquote>
-  <p><%=answer.text%></p> <small><%=User.find(answer.user_id).name%> <cite><%=answer.created_at%></cite></small>
+  <p><%=answer.text%> <%= render('questions/vote', locals: { obj: @element = answer })%></p>
+  <small><%=User.find(answer.user_id).name%> <cite><%=answer.created_at%></cite></small>
 </blockquote>

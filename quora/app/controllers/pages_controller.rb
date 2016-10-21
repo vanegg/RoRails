@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  def show    
+  def show   
     if valid_page?
       render template: "pages/#{params[:page]}"
     else
@@ -32,8 +32,6 @@ class PagesController < ApplicationController
 
   def logout
     session.clear
-    p "*" * 30
-    p current_user
     redirect_to pages_home_path
   end
 

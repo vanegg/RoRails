@@ -1,0 +1,34 @@
+<div class="form-group">
+<%question = Question.find(@answer.question_id)%>
+<div class="col-md-9">
+  <blockquote>
+    <p><%=question.text%> <%= render('questions/vote', locals: { obj: @element = question })%></p>
+    <small><%=User.find(question.user_id).name%> <cite><%=question.created_at%></cite></small>
+
+  </blockquote> 
+
+<%= form_for [current_user, @answer] do |f| %>
+  <% if @answer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
+
+      <ul>
+      <% @answer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'answer:' %>
+    <%= f.text_area :text, class: 'form-control' %>
+  </div>
+    <%= f.hidden_field :id %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>
+</div>

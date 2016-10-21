@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h1>
+   Edit Question!</q> <small>editing...</small>
+  </h1>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+  <div class="row">
+
+    <div class="col-sm-3">
+      <%= render 'layouts/vertical_navbar', layout: false%>
+    </div>
+  <div class="col-sm-9">
+    <%@question = Question.find(params[:id])%>
+    <%= render 'form', question: @question %>
+   
+  </div>
+</div>

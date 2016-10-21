@@ -1,0 +1,24 @@
+<div class="page-header">
+  <h1>
+    Your question!</q> <small> We find the question # <%=@question.id%>...</small>
+  </h1>
+</div>
+<p id="notice"><%= notice %></p>
+<div class="row">
+<div class="col-sm-3">
+<%= render 'layouts/vertical_navbar', layout: false%>
+</div>
+
+<div class="col-md-6">
+  <div class="row">
+    <%= form_tag user_question_path(current_user), method: 'get', class: "navbar-form navbar-left" do%>
+      <div class="form-group">
+        <%= text_field_tag 'question_id', nil, class: "form-control" %>
+      </div>
+      <%= submit_tag("Search", class: "btn btn-cstom")  %>
+    <%end%>
+  </div>
+</div>
+
+<%= render(@question)%>
+</div>
