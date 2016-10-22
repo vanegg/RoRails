@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :questions
     resources :answers
   end
+  resources :votes
   # get "/pages/*page" => "pages#show"
   # root "pages#show", page: "home"
   get "/questions/all" => "questions#all"
