@@ -15,7 +15,25 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <%= render(@answers)%>
+      <%if current_user.id != question.user_id%>
+        <%=form_tag "/users/#{current_user.id}/answers", method: :post, class: "navbar-form navbar-left" do%>
+          <div class="form-group">
+            <div class="col-md-7">
+            <blockquote>
+              <%= text_area_tag 'answer_text', nil, class: "form-control" %>
+              <%=hidden_field_tag 'question_id', question.id%>
+            </blockquote>
+            </div>
+            <div class="col-md-5">
+              <br>
+              <%= submit_tag("Save answer", class: "btn btn-cstom")  %>
+
+            </div>
+            </div>
+        <%end%>
+      <%end%>
     </div>
   </div>
+
   
 </div>

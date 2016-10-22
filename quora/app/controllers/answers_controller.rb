@@ -8,6 +8,19 @@ class AnswersController < ApplicationController
     @questions = Question.where(id: ids)
   end
 
+  def create
+    @answer = Answer.new(text: params[:answer_text])
+    @question = Question.find(params[:question_id])
+    @question.answers << @answer
+    current_user.answers << @answer
+    if @answer.save
+      flash[:success] = "Answer successfully saved"
+    else
+      flash[:error] = "Answer not saved in database"
+    end
+    redirect_to user_answers_path
+  end
+
   def show
     id = params[:answer_id] ? params[:answer_id] : params[:id]
     @answer = Answer.find(id)
