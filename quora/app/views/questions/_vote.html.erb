@@ -1,8 +1,8 @@
 <%@controller = @element.class.to_s.downcase + 's'%> 
 
-<a href="#">Votes:</a> <span class="badge"><%=@element.votes.length%></span>
+<%=link_to "Votes:", new_vote_path(type: @element.class,id: @element), remote: true, class: 'btn_vote'
+%><span class="badge num_vote" id= <%="#{@controller}_#{@element.id}"%>><%=@element.votes.length%></span>
+
 <%if @element.user_id == current_user.id%>
 | <%=link_to "Edit", {controller: @controller, :action => :edit, user_id: current_user.id, id: @element.id}%>
 <%end%>
-
-<%= link_to "Votes:", :user, remote: true %>
